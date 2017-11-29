@@ -2,7 +2,7 @@
 Unit tests for our python code
 """
 
-import my_module 
+from custom_library import my_module 
 import pytest
 
 def test_square_root_4():
