@@ -2,6 +2,17 @@
 All the fancy stuff that my library is going to do
 """
 
-def square_root(number):
-    """Takes the square root of a number"""
-    return number**(1/2)
+class Adder:
+    """Definition for a line"""
+    def __init__(self, number):
+        self.number = number
+
+    def add_one(self):
+        """Add 1 to number attribute"""
+        self.number += 1
+        return self.number
+
+    def add_two(self): 
+        """Adds 2 to number attribute"""
+        self.number += 2
+        return self.number
