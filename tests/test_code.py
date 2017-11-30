@@ -5,12 +5,15 @@ Unit tests for our python code
 from custom_library import my_module 
 import pytest
 
-def test_add_one():
-    """Test that adding one works correctly"""
+@pytest.fixture(scope='function')
+def adder_instance():
     m = my_module.Adder(1)
-    assert m.add_one() == 2
+    return m
 
-def test_square_root_letter():
+def test_add_one(adder_instance):
+    """Test that adding one works correctly"""
+    assert adder_instance.add_one() == 2
+
+def test_square_root_letter(adder_instance):
     """Test that adding two works correctly"""
-    m = my_module.Adder(1)
-    assert m.add_two() == 3
+    assert adder_instance.add_two() == 3
